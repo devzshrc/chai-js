@@ -41,3 +41,5 @@ console.log("Chaicode");
 console.log("Chaicode");
 
 console.count("Chaicode");
+
+//all these stuff help us only with printing
