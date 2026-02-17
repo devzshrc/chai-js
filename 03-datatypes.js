@@ -52,7 +52,35 @@ console.log(typeof null);
 console.log(typeof Symbol());
 console.log(typeof {});
 console.log(typeof []);
-console.log(typeof function(){});
+console.log(typeof function () {});
 
+let originalHP = 100;
+let cloneHP = originalHP;
 
+cloneHP = 80;
+console.log("Original HP: ", originalHP);
+console.log("Clone HP: ", cloneHP);
 
+const originalSword = {
+  name: "Flame Sword",
+  damage: 75,
+  typeofW: "Fire",
+};
+// whenever we try to copy objects like this - it sends the reference
+
+const cloneSword = originalSword;
+
+cloneSword.damage = 100;
+
+// how to copy
+// we will never copy objects directly like this: const cloneSword = originalSword;
+
+const armorOriginal = {
+  name: "Iron PLate",
+  defence: 80,
+  buff: {
+    fire: 10,
+  },
+};
+// how to copy this
+const armorCopy = { ...armorOriginal }; //spread operator - spreads all of the properties and combines them
