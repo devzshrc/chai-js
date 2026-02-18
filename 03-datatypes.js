@@ -21,7 +21,12 @@ console.log(weatherApiResponse);
 //quirk: typeof null is null in JS - a bug due to backward compatibility
 
 const uniqueRuneId = Symbol("rune_of_fire");
-console.log("Rune: ", uniqueRuneId.toString(), "\ typeof: ", typeof uniqueRuneId);
+console.log(
+  "Rune: ",
+  uniqueRuneId.toString(),
+  "\ typeof: ",
+  typeof uniqueRuneId,
+);
 //use .toString() when working with symbol as a precaution
 
 //how many primitives?
@@ -84,3 +89,7 @@ const armorOriginal = {
 };
 // how to copy this
 const armorCopy = { ...armorOriginal }; //spread operator - spreads all of the properties and combines them
+armorCopy.buff.fire = 90;
+// for nested objects - structuredClone() - recent addition to JS
+const potionOriginal = { name: "Health", effects: { heal: 40, mana: 30 } };
+const potionCopy = structuredClone(potionOriginal);
